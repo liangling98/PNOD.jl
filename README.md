@@ -15,6 +15,24 @@ A Julia package on the Projected-Newton-Based framework for Exact Experimental D
 To reproduce the numerical results in the paper, please just run in your terminal:
 
 ```julia
-julia run_exp.jl > log.txt
+julia run_exp.jl > ./exp_results/log.txt
 ```
 
+### Nodes evaluated per second
+
+
+<img src="./exp_results/Aind.png" width="300" height="200" />
+<img src="./exp_results/Acor.png" width="300" height="200" />
+<img src="./exp_results/Dind.png" width="300" height="200" />
+<img src="./exp_results/Dcor.png" width="300" height="200" />
+
+### Total computational time
+
+<img src="./exp_results/Aind_cpu.png" width="300" height="200" />
+<img src="./exp_results/Acor_cpu.png" width="300" height="200" />
+<img src="./exp_results/Dind_cpu.png" width="300" height="200" />
+<img src="./exp_results/Dcor_cpu.png" width="300" height="200" />
+
+### Number of instances "successfully solved"
+
+<img src="./exp_results/solved.png" width="600" height="400" />
