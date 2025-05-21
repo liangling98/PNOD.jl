@@ -3,14 +3,15 @@ using LinearAlgebra
 
 time_limit = 3.6e3*2 
 
-#pre compile 
+# pre compile 
 A0, ub0, N0 = PNOD.build_data(1, 20, 2, false)
 PNOD.ipod_solve_vempn(A0, ub0, N0, "D"; time_limit=time_limit, print_iter=10000)
 
-for criterion in ["A", "D"]
-    for type in ["IND", "COR"]
+# acutal experiments
+for criterion in ["A"] #["A", "D"]
+    for type in ["IND"] #["IND", "COR"]
         for k in [10]
-            for m in [50, 60, 80, 100, 120]
+            for m in [50] #[50, 60, 80, 100, 120]
                 n = Int(floor(m / k))
                 for seed in 1:5
 
@@ -24,7 +25,7 @@ for criterion in ["A", "D"]
                     @show time_limit
 
                     # run optimizer
-                    x  = PNOD.ipod_solve_vempn(A, ub, N, criterion; time_limit=time_limit, print_iter=10000, save_results=true)
+                    x  = PNOD.ipod_solve_vempn(A, ub, N, criterion; time_limit=time_limit, print_iter=10000, save_results=false)
 
                     if criterion in ["A"]
                         @show obj = log(LinearAlgebra.tr(LinearAlgebra.inv(transpose(A) * diagm(x) * A)))

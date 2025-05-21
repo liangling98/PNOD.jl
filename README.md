@@ -12,27 +12,33 @@ A Julia package on the Projected-Newton-Based framework for Exact Experimental D
 
 
 ## Reproducibility
-To reproduce the numerical results in the paper, please just run in your terminal:
+To reproduce the numerical results of PNOD in the paper (works on Unix systems, not sure for Windows):
 
-```julia
-julia run_exp.jl > ./exp_results/log.txt
+- Set up a valid [Github account](https://docs.github.com/en/get-started) on your machine
+- [Install Julia Programming Language](https://julialang.org/install/)
+- Clone this Repo by typing the follow in your terminal:
+```git
+git clone https://github.com/liangling98/PNOD.jl.git
 ```
-
-### Nodes evaluated per second
-
-
-<img src="./exp_results/Aind.png" width="300" height="200" />
-<img src="./exp_results/Acor.png" width="300" height="200" />
-<img src="./exp_results/Dind.png" width="300" height="200" />
-<img src="./exp_results/Dcor.png" width="300" height="200" />
-
-### Total computational time
-
-<img src="./exp_results/Aind_cpu.png" width="300" height="200" />
-<img src="./exp_results/Acor_cpu.png" width="300" height="200" />
-<img src="./exp_results/Dind_cpu.png" width="300" height="200" />
-<img src="./exp_results/Dcor_cpu.png" width="300" height="200" />
-
-### Number of instances "successfully solved"
-
-<img src="./exp_results/solved.png" width="600" height="400" />
+- Direct to the `PNOD.jl` folder and type `julia` in your terminal to enter Julia REPL:
+```
+cd PNOD.jl
+julia
+```
+- Press ']' to enter Pkg mode then type the following one by one to activate the env and install all required packages:
+```julia
+activate .
+instantiate
+```
+- Quit the Pkg mode by pressing 'delete' and run the experiment in REPL via:
+```julia
+include("run_exp.jl")
+```
+If you want to get all the results, try:
+```julia
+for criterion in ["A", "D"]
+    for type in ["IND", "COR"]
+        for k in [10]
+            for m in [50, 60, 80, 100, 120]
+                ...
+```
