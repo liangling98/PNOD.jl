@@ -16,7 +16,7 @@ To reproduce the numerical results of PNOD in the paper (works on Unix systems, 
 
 - Set up a valid [Github account](https://docs.github.com/en/get-started) on your machine
 - [Install Julia Programming Language](https://julialang.org/install/)
-- Clone this Repo by typing the follow in your terminal:
+- Clone this Repo by typing the following in your terminal:
 ```git
 git clone https://github.com/liangling98/PNOD.jl.git
 ```
@@ -34,7 +34,7 @@ instantiate
 ```julia
 include("run_exp.jl")
 ```
-If you want to get all the results, try:
+If you want to get all the results, try to modified the associated part in `run_exp.jl` using the following setup:
 ```julia
 for criterion in ["A", "D"]
     for type in ["IND", "COR"]
